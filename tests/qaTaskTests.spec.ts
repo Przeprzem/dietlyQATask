@@ -1,4 +1,4 @@
-import { test, expect, APIRequest, APIRequestContext, APIResponse } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import assert from 'assert';
 import axios, { AxiosResponse } from 'axios';
 
