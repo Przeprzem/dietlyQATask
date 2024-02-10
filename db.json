@@ -1,0 +1,58 @@
+{
+	"users": [
+		{ "id": 1, "name": "Frodo Baggins", "email": "frodo.baggins@dev.dietly.pl" },
+		{ "id": 2, "name": "Bilbo Baggins", "email": "frodo.baggins@dev.dietly.pl" },
+		{ "id": 3, "name": "Gothmog", "email": "balrog@dev.dietly.pl" },
+		{ "id": 3, "name": "Grima", "email": "grima@dev.dietly.pl", "_debug": "duplicate ID" },
+		{ "id": 4, "name": "Gimli", "email": "gimli.son.of.gloin@dev.dietly.pl" }
+	],
+
+	"caterings": [
+		{ "id": 1, "name": "The Prancing Pony" },
+		{ "id": 2, "name": "MasterElves" },
+		{ "id": 3, "name": "Isengard Canteen" }
+	],
+
+	"diets": [
+		{ "id": 1, "name": "Hobbits' Standard" },
+		{ "id": 2, "name": "Shire Keto" },
+		{ "id": 3, "name": "Bree Weight-loss" },
+		{ "id": 4, "name": "Hobbiton Beer and Stew" },
+		{ "id": 5, "name": "Lembas Low IG" },
+		{ "id": 6, "name": "Elvish FODMAP" },
+		{ "id": 7, "name": "Ork's Regular Military Rations" },
+		{ "id": 8, "name": "Uruk-hai Fare" }
+	],
+
+	"offers": [
+		{ "cateringId": 1,  "dietId": 1 },
+		{ "cateringId": 1,  "dietId": 2 },
+		{ "cateringId": 1,  "dietId": 3 },
+		{ "cateringId": 1,  "dietId": 4 },
+		{ "cateringId": 2,  "dietId": 5 },
+		{ "cateringId": 2,  "dietId": 6 },
+		{ "cateringId": 3,  "dietId": 7 },
+		{ "cateringId": 3,  "dietId": 0, "_debug": "non existing diet" },
+		{ "cateringId": 3,  "dietId": 8 }
+	],
+
+	"orders": [
+		{ "id": 1,  "datetime": "2022-03-12 12:43:37.000", "from_date": "2022-03-14", "to_date": "2022-03-20", "dietId": 1, "userId": 1, "_debug": "ok, 7 days diet" },
+		{ "id": 2,  "datetime": "2022-03-15 10:12:23.123", "from_date": "2022-03-21", "to_date": "2022-03-27", "dietId": 1, "userId": 1, "_debug": "ok, another 7 days diet" },
+		{ "id": 3,  "datetime": "2022-03-15 03:45:23.123", "from_date": "2022-04-07", "to_date": "2022-04-06", "dietId": 1, "userId": 1, "_debug": "-1 days diet?" },
+		{ "id": 4,  "datetime": "2022-03-15 10:18:12.999", "from_date": "2022-03-21", "to_date": "2022-03-27", "dietId": 2, "userId": 1, "_debug": "ok, same dates as order 1"},
+		{ "id": 5,  "datetime": "2022-03-03 11:13:24.000", "from_date": "2022-04-02", "to_date": "2022-03-03", "dietId": 2, "userId": 2, "_debug": "end date befre start date?" },
+		{ "id": 6,  "datetime": "2022-03-12 23:51:02.000", "from_date": "2022-04-14", "to_date": "2022-04-30", "dietId": 3, "userId": 2, "_debug": "starting after 30 days from order date" },
+		{ "id": 7,  "datetime": "2022-03-12 23:51:02.000", "from_date": "2022-03-14", "to_date": "2022-04-30", "dietId": 3, "userId": 2, "_debug": "order for more that 30 days"},
+		{ "id": 6,  "datetime": "2022-03-12 12:43:27.000", "from_date": "2022-03-14", "to_date": "2022-03-20", "dietId": 1, "userId": 1, "_debug": "duplicate id, data as in order 1"},
+		{ "id": 9,  "datetime": "2022-03-12 12:43:36.000", "from_date": "2022-03-14", "to_date": "2022-03-20", "dietId": 0, "userId": 3, "_debug": "non-existing diet" },
+		{ "id": 10, "datetime": "2022-05-02 12:43:22.000", "from_date": "2022-05-11", "to_date": "2022-05-20", "dietId": 8, "userId": 3 },
+		{ "id": 11, "datetime": "2022-06-02 12:43:51.000", "from_date": "2022-06-30", "to_date": "2022-06-31", "dietId": 8, "userId": 3, "_debug": "end date does not exists" },
+		{ "id": 12, "datetime": "2022-04-12 20:01:37.000", "from_date": "2022-03-20", "to_date": "2022-03-30", "dietId": 7, "userId": 3 },
+		{ "id": 13, "datetime": "2022-03-12 12:43:37.000", "from_date": "2022-03-14", "to_date": "2022-03-20", "dietId": 2, "userId": 3, "_debug": "antagonist on protagonist diet? not an error" },
+		{ "id": 14, "datetime": "2022-04-04 00:00:12.345", "from_date": "2022-04-04", "to_date": "2022-04-04", "dietId": 5, "userId": 3, "_debug": "immediate order? nah! not possible" },
+		{ "id": 15, "datetime": "2022-04-19 16:18:18.000", "from_date": "2022-04-20", "to_date": "2022-04-22", "dietId": 6, "userId": 3, "_debug": "ok, 3 days diet" },
+		{ "id": 15, "datetime": "2022-04-19 16:32:32.000", "from_date": "2022-04-20", "to_date": "2022-04-22", "dietId": 6, "userId": 3, "_debug": "nok! same diet ordered second time" }
+	]
+}
+
