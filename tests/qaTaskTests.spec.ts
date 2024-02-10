@@ -12,6 +12,19 @@ test('get all users response == 200', async () => {
 
   assert(allUsers.status === 200 && usersJSON.length > 0)
 });
+
+test('post user response == 201', async () => {
+  let endpointUrl = `/users`
+  let requestBody = `{
+    "id": "500",
+    "name": "Frodo Baggins2",
+    "email": "frodo.baggins2@dev.dietly.pl"
+}`
+  let response = (await axios.post(apiBaseUrl + endpointUrl, requestBody))
+  let usersJSON = JSON.parse(JSON.stringify(response.data))
+
+  assert(response.status === 201) //expected 201, because no validation in requirements, but in real life this should be blocked as duplicate
+});
 test('no users have _debug value', async () => {
   let endpointUrl = `/users`
   let allUsers = (await axios.get(apiBaseUrl + endpointUrl))
